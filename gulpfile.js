@@ -26,8 +26,8 @@ function addStyles(paths, outputFilename) {
 }
 function styles() {
     return addStyles([
-        './app/styles/index.sass',
-        './node_modules/normalize.css/normalize.css'
+        './node_modules/normalize.css/normalize.css',
+        './app/styles/index.sass'
     ],'main.css')
 }
 
@@ -61,7 +61,7 @@ function watcher() {
         }
     });
 
-    watch('.app/styles/**/*.less', styles);
+    watch('./app/**/*.sass', styles);
     watch('./app/**/*.js', scripts);
     watch("/*.html").on('change', browserSync.reload);
 }
