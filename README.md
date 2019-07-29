@@ -1,5 +1,5 @@
 
-#Installation:
+# Installation:
 -nmp install
-#Run
+# Run
 -npm run dev
