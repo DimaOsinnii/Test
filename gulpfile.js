@@ -1,14 +1,14 @@
-const {watch, src, dest, task, series, parallel} = require('gulp');
-const sass = require('gulp-sass');
-const sourcepams = require('gulp-sourcemaps');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const del = require('del');
-const pipeline = require('readable-stream').pipeline;
-const cleanCSS = require('gulp-clean-css');
-const browserSync = require('browser-sync').create();
-const autoprefixer = require('gulp-autoprefixer');
-const  bable = require('gulp-babel');
+const {watch, src, dest, task, series, parallel} = require('gulp');//include gulp
+const sass = require('gulp-sass'); //compiler code sass to css
+const sourcepams = require('gulp-sourcemaps');//record source code js or sass to map
+const concat = require('gulp-concat');//file concatenation into one
+const uglify = require('gulp-uglify');//js code minimization
+const del = require('del');//plugin for cleaning build folder
+const pipeline = require('readable-stream').pipeline;//merging all .pipe into pipeline
+const cleanCSS = require('gulp-clean-css');//write css in one line
+const browserSync = require('browser-sync').create();//local server
+const autoprefixer = require('gulp-autoprefixer');//Add prefix for new properties
+const  bable = require('gulp-babel');//compiler js ES6 into ES5
 
 
 function addStyles(paths, outputFilename) {
@@ -26,16 +26,18 @@ function addStyles(paths, outputFilename) {
 }
 function styles() {
     return addStyles([
+        './app/slick/slick.css',
+        './app/slick/slick-theme.css',
         './node_modules/normalize.css/normalize.css',
-        './app/styles/index.sass'
+        './app/styles/dropdown.css',
+        './app/styles/index.sass',
     ],'main.css')
 }
 
 function scripts() {
     return pipeline(
-        src(['./app/scripts/*.js']),
+        src(['./app/scripts/*.js', './app/slick/slick.js']),
         sourcepams.init(),
-        uglify(),
         bable({
             presets: [
                 ['@babel/env', {
@@ -64,7 +66,7 @@ function watcher() {
     watch('./app/**/*.sass', styles);
     watch('./app/**/*.js', scripts);
     watch("/*.html").on('change', browserSync.reload);
-}
+}//tracking all files that can be changed for hot reload with Browser Sync
 
 task('styles', styles);
 task('scripts', scripts);

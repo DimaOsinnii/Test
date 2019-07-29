@@ -1,20 +1,16 @@
 @import "font"
+*
+  font-family: 'Lato', sans-serif
+  box-sizing: border-box
+
 body
   font-size: 18px
+
   h1
     margin: 0
     color: white
     font-size: 3rem
-
-  a
-    text-decoration: none
-    color: #4e4846
-
-    &:hover
-      color: white
-      border-bottom: 4px solid #00b5d2
-      padding-bottom: 18px
-      transition: 0.1s
+    font-weight: bold
 
   .text
     line-height: 30px
@@ -23,6 +19,7 @@ body
 header
   position: absolute
   width: 100%
+  min-width: 320px
   max-height: 110px
   height: 100%
   display: flex
@@ -38,9 +35,25 @@ header
     .logo
       cursor: pointer
 
+      img
+        width: 100%
+
     nav
-      a:not(:last-child)
-        margin-right: 40px
+      .nav-btn
+        text-decoration: none
+        color: #4e4846
+
+        &:not(:last-child)
+          margin-right: 40px
+
+        &:hover
+          color: white
+          border-bottom: 4px solid #00b5d2
+          padding-bottom: 18px
+          transition: 0.1s
+
+    .dropdown
+      display: none
 
 main
   .hero
@@ -85,10 +98,25 @@ main
       justify-content: space-between
       align-items: center
       flex-wrap: wrap
+      padding-right: -10px
+      padding-left: -10px
+
+      .img-wrapper
+        width: 16.66666%
+        box-sizing: border-box
+        padding: 10px 20px
+
+        &:first-child
+          padding-left: 0
+
+        &:last-child
+          padding-right: 0
+
+        img
+          width: 100%
 
   .age
-    height: 100vh
-    max-height: 500px
+    min-height: 500px
     background-color: #00b5d2
     display: flex
     justify-content: center
@@ -117,30 +145,48 @@ main
 
     h3
       font-size: 1.5rem
+      margin: 0 0 43px 0
       color: #777777
 
     p
       line-height: 30px
+      margin: 0 0 43px 0
       text-align: center
 
   .in-home-support
-    padding-bottom: 111px
+    position: relative
+    height: 712px
+    display: flex
+    flex-direction: column
+    align-items: center
 
     .background
       width: 100%
-      height: 710px
+      height: 600px
       background: url("/app/images/backg.png") center center no-repeat
       background-size: cover
 
     .slider
       width: 100%
-      height: 100%
+      position: absolute
+      top: 23%
+      overflow: hidden
       display: flex
-      align-items: flex-end
       justify-content: center
+      align-items: center
 
-      .item
-        transform: translateY(50px)
+      .slide-content
+        width: 100%
+
+        .item
+          display: flex !important
+          justify-content: center !important
+
+          img
+            width: 100%
+            height: 100%
+            max-width: 756px
+            max-height: 503px
 
   .join-our-team
     display: flex
@@ -153,6 +199,7 @@ main
       width: 100%
       display: flex
       justify-content: space-between
+      flex-wrap: wrap
       margin: 0
 
 
@@ -170,7 +217,6 @@ main
 
       .description
         max-width: 480px
-        height: 400px
 
         .btn
           box-shadow: inset 0 70px 0 -10px #00b5d2
@@ -181,20 +227,39 @@ main
             transition: 0.1s
 
 footer
-  height: 402px
   width: 100%
   border-top: 3px solid #cccccc
   display: flex
-  justify-content: space-between
+  justify-content: flex-start
   padding: 48px 0
   align-items: center
   flex-direction: column
 
-  a:not(:last-child)
-    margin-right: 60px
+  .footer-nav
+    margin: 0 0 50px 0
+    padding: 0
+    list-style: none
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: row
+
+    li
+      width: 25%
+      white-space: nowrap
+
+      &:not(:last-child)
+        margin-right: 60px
+
+      a
+        text-decoration: none
+        color: #000
+        width: 25%
+
 
   .field
     display: flex
+    margin-bottom: 50px
 
     .cube
       width: 13px
@@ -203,15 +268,19 @@ footer
 
       &:not(:last-child)
         margin-right: 40px
+
   p
     text-align: center
     margin: 0 0 22px 0
+
   .email
     color: #e1aa6e
+
   .sub-footer
     width: 100%
     max-width: 948px
     border-top: 1px solid #eeeeee
+
     .copyright
       margin: 34px 0 0 0
       text-align: center

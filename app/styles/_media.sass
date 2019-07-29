@@ -1,0 +1,175 @@
+@media (max-width: 768px)
+  body
+    min-width: 320px
+
+    p
+      font-size: 0.9rem
+
+    h1
+      font-size: 2rem
+  header
+    height: 90px
+    position: fixed
+    z-index: 2
+    background-color: #e1aa6e
+    border-bottom: 5px solid #008ea5
+
+    .container
+      height: 100%
+
+      .logo
+        max-width: 178px
+        display: flex
+        align-items: center
+
+      nav
+        display: none
+
+      .dropdown
+        display: flex
+        justify-content: center
+        position: absolute
+        width: 100%
+        height: 100%
+        flex-direction: column
+        color: #4e4846
+
+        .drop-down-button
+          display: flex
+          align-items: center
+          justify-content: flex-end
+          z-index: 1
+
+          .hamburger
+            display: flex
+            align-items: center
+            height: 10vh
+            padding: 0
+
+            .hamburger-inner
+              background-color: #008ea5
+
+              &:after, &:before
+                background-color: #008ea5
+
+            .hamburger-box
+              margin-right: 10px
+
+            .menu
+              font-size: 1.25rem
+              font-weight: bolder
+
+
+          .hamburger:focus
+            outline: none
+
+
+        .dropdown-content
+          position: absolute
+          transition: top 0.5s
+          top: -90vh
+          width: 100%
+          display: flex
+          flex-direction: column
+          z-index: -5
+          box-shadow: 0px 0px 39px -5px rgba(0, 0, 0, 0.75)
+
+          a
+            width: 100%
+            height: 15vh
+            text-align: center
+            text-decoration: none
+            color: black
+            display: flex
+            align-items: center
+            justify-content: center
+            background-color: white
+
+
+            &:hover
+              background-color: #00b5d2
+              border-bottom: 5px solid #e1aa6e
+              color: white
+
+            span
+              font-size: 1rem
+
+              &:hover
+                color: white
+  main
+    .hero
+      .container
+        .content
+          padding: 0 10px
+
+
+    .partners
+      .container
+        .img-wrapper
+          width: 33.333333%
+
+          &:nth-child(3)
+            padding-right: 0
+
+          &:nth-child(4)
+            padding-left: 0
+
+    .age
+      .container
+        text-align: center
+
+    .join-our-team
+      .container
+        position: relative
+        justify-content: center
+
+        .left
+          position: absolute
+          min-width: 100%
+          min-height: 100%
+
+          &:after
+            content: ""
+            position: absolute
+            width: 100%
+            height: 100%
+            opacity: 0.6
+            background-color: black
+
+        .right
+          z-index: 1
+          width: auto
+          justify-content: center
+          padding: 0
+
+          .description
+            padding: 0 10px
+            display: flex
+            flex-direction: column
+          p:first-child
+            text-align: left
+          p
+            text-align: center
+
+    .mbis
+      padding: 24px 10px
+      text-align: center
+
+      h3
+        margin: 0
+
+    .in-home-support
+      height: auto
+
+      .slider
+        top: 0
+        bottom: 0
+
+  footer
+    .footer-nav,
+    .field
+      display: none
+  .container
+    margin: 0 15px
+  .btn
+    align-self: center
