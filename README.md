@@ -1,5 +1,5 @@
-# Test
-1.Installation:
+
+#Installation:
 -nmp install
-2.Run
+#Run
 -npm run dev
