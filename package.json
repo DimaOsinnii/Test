@@ -37,6 +37,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "gulp-babel": "^8.0.0",
+    "gulp-imagemin": "^6.0.0",
     "install": "^0.13.0",
     "merge-stream": "^2.0.0",
     "npm": "^6.10.2"
